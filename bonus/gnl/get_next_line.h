@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moving_func1.c                                     :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 23:43:47 by ajeanne           #+#    #+#             */
-/*   Updated: 2022/11/12 17:06:04 by ajeanne          ###   ########.fr       */
+/*   Created: 2022/06/04 16:45:00 by alex              #+#    #+#             */
+/*   Updated: 2022/06/20 22:33:10 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	mv_rrotate(t_list_data **lst)
-{
-	if (*lst && (*lst)->next)
-	{
-		lst_rrotate(lst);
-		while ((*lst)->prev)
-			*lst = (*lst)->prev;
-		return (0);
-	}
-	return (1);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
-int	double_mv_rrotate(t_list_data **lsta, t_list_data **lstb)
-{
-	if (!mv_rrotate(lsta))
-		if (!mv_rrotate(lstb))
-			return (0);
-	return (1);
-}
+# include <stdlib.h>
+
+char	*get_next_line(int fd);
+int		is_bsn(char *dest);
+int		ft_strlen(const char *str);
+char	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strdup(char *str);
+char	*ft_strcat(char *s1, char *s2);
+void	clean_buf(char *str);
+void	*ft_memset(void *s, int c, size_t n);
+
+#endif

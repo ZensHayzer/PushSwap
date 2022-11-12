@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 18:13:39 by ajeanne           #+#    #+#             */
-/*   Updated: 2022/11/12 15:43:42 by ajeanne          ###   ########.fr       */
+/*   Updated: 2022/11/12 18:29:39 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,8 @@ int	main(int argc, char **argv)
 		return (free(list), error(lists));
 	if (lst_len(lists->a) == 2)
 		return (only_two(lists->a), 0);
+	if (is_sorted(lists->a))
+		return (free(list), clear(lists), 0);
 	if (sorting(lists, pre_sorting(lists->a, argc - 1, list), argc - 1))
 		return (free(list), clear(lists), 0);
 	free(list);

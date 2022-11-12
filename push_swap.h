@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 18:13:31 by ajeanne           #+#    #+#             */
-/*   Updated: 2022/10/31 22:14:38 by ajeanne          ###   ########.fr       */
+/*   Updated: 2022/11/12 16:22:00 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <stddef.h>
-//#define malloc(n) malloc(0)
 
 /***************************************/
 /*             CHAINED LISTS           */
