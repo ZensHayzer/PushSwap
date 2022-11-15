@@ -6,25 +6,21 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:00:58 by ajeanne           #+#    #+#             */
-/*   Updated: 2022/11/15 10:27:45 by ajeanne          ###   ########.fr       */
+/*   Updated: 2022/11/15 14:50:22 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 #include "unistd.h"
 
-void	ft_lstclear(t_list_data *lst)
+int	error_parsing(t_list_data *lsta, t_list_data *lstb, char *line)
 {
-	void	*tmp;
-
-	if (!lst)
-		return ;
-	while (lst)
-	{
-		tmp = lst->next;
-		free(lst);
-		lst = tmp;
-	}
+	ft_lstclear(lsta);
+	ft_lstclear(lstb);
+	if (line)
+		free(line);
+	write(1, "Error\n", 6);
+	return (0);
 }
 
 void	error(t_list_data *lsta, t_list_data *lstb, char *line)
@@ -81,10 +77,10 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	line = NULL;
-	if (argc < 3)
-		return (error(a, b, line), 0);
 	if (parsing(&a, argv, argc))
-		return (error(a, b, line), 0);
+		return (error_parsing(a, b, line));
+	if (argc < 3)
+		return (0);
 	line = get_next_line(0);
 	while (line)
 	{

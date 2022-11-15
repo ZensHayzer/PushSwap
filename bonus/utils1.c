@@ -6,11 +6,12 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:10:04 by ajeanne           #+#    #+#             */
-/*   Updated: 2022/11/12 17:55:50 by ajeanne          ###   ########.fr       */
+/*   Updated: 2022/11/15 12:55:44 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include "unistd.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -39,4 +40,18 @@ int	is_sorted(t_list_data *lst)
 	while (lst->prev)
 		lst = lst->prev;
 	return (1);
+}
+
+void	ft_lstclear(t_list_data *lst)
+{
+	void	*tmp;
+
+	if (!lst)
+		return ;
+	while (lst)
+	{
+		tmp = lst->next;
+		free(lst);
+		lst = tmp;
+	}
 }

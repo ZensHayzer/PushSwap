@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 18:13:39 by ajeanne           #+#    #+#             */
-/*   Updated: 2022/11/12 18:29:39 by ajeanne          ###   ########.fr       */
+/*   Updated: 2022/11/15 14:50:43 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,10 @@ int	main(int argc, char **argv)
 	lists = ft_lstnew_lists();
 	if (!lists)
 		return (free(list), 0);
-	if (argc < 3)
-		return (free(list), error(lists));
 	if (parsing(&lists->a, argv, argc))
 		return (free(list), error(lists));
+	if (argc < 3)
+		return (free(list), clear(lists), 0);
 	if (lst_len(lists->a) == 2)
 		return (only_two(lists->a), 0);
 	if (is_sorted(lists->a))

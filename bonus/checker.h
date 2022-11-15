@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:20:35 by ajeanne           #+#    #+#             */
-/*   Updated: 2022/11/12 17:56:02 by ajeanne          ###   ########.fr       */
+/*   Updated: 2022/11/15 12:55:52 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int			isok_nb(char *nb);
 // utils1
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			is_sorted(t_list_data *lst);
+void		ft_lstclear(t_list_data *lst);
 
 // moving
 void		lst_swap(t_list_data *lst, t_list_data *lst1);
@@ -64,5 +65,7 @@ int			double_mv_rotate(t_list_data **lsta, t_list_data **lstb);
 // moving_calls1
 int			mv_rrotate(t_list_data **lst);
 int			double_mv_rrotate(t_list_data **lsta, t_list_data **lstb);
+
+// checker
 
 #endif
