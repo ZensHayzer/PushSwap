@@ -6,13 +6,13 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:01:06 by ajeanne           #+#    #+#             */
-/*   Updated: 2022/11/12 17:01:36 by ajeanne          ###   ########.fr       */
+/*   Updated: 2022/11/15 09:55:48 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int mv_rrotate(t_list_data **lst)
+int	mv_rrotate(t_list_data **lst)
 {
 	if (*lst && (*lst)->next)
 	{
@@ -24,7 +24,7 @@ int mv_rrotate(t_list_data **lst)
 	return (1);
 }
 
-int double_mv_rrotate(t_list_data **lsta, t_list_data **lstb)
+int	double_mv_rrotate(t_list_data **lsta, t_list_data **lstb)
 {
 	if (!mv_rrotate(lsta))
 		if (!mv_rrotate(lstb))

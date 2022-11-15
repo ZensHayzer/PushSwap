@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:00:58 by ajeanne           #+#    #+#             */
-/*   Updated: 2022/11/12 18:07:22 by ajeanne          ###   ########.fr       */
+/*   Updated: 2022/11/15 10:27:45 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,8 @@ int	main(int argc, char **argv)
 	{
 		if (!execute_calls(&a, &b, line))
 			return (error(a, b, line), 0);
-		free(line);
+		if (line)
+			free(line);
 		line = get_next_line(0);
 	}
 	if (is_sorted(a) && !b)
