@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 18:13:39 by ajeanne           #+#    #+#             */
-/*   Updated: 2022/11/15 14:50:43 by ajeanne          ###   ########.fr       */
+/*   Updated: 2022/11/17 19:48:40 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	sorting(t_lists *lists, int *sorted_list, int list_len)
 {
 	int	med;
 
-	med = list_len / 3;
+	med = list_len / 2;
 	stack_content_modifier(&lists->a, sorted_list);
 	while (lst_len(lists->a) > 3)
 	{
